@@ -6,14 +6,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { DarkModeToggle } from '@/components/shared/DarkModeToggle';
 
 const NAV_ITEMS = [
-  { label: 'Breeds', href: '/breeds' },
-  { label: 'Health', href: '/health' },
-  { label: 'Training', href: '/training' },
-  { label: 'Nutrition', href: '/nutrition' },
-  { label: 'Walks', href: '/walks' },
-  { label: 'Dog Friendly', href: '/dog-friendly/cafes' },
-  { label: 'Tools', href: '/tools' },
-  { label: 'About', href: '/about' },
+  { label: 'Breeds', href: '/breed-database', emoji: '🐾' },
+  { label: 'Health', href: '/health', emoji: '💚' },
+  { label: 'Training', href: '/training', emoji: '🎓' },
+  { label: 'Walks', href: '/walks', emoji: '🌳' },
+  { label: 'Dog Friendly', href: '/dog-friendly/cafes', emoji: '☕' },
+  { label: 'Tools', href: '/tools', emoji: '🧰' },
+  { label: 'About', href: '/about', emoji: '💬' },
 ];
 
 export function Header() {
@@ -34,8 +33,9 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-charcoal/80 hover:text-forest-green transition-colors dark:text-dark-text/80 dark:hover:text-muted-sage"
+              className="flex items-center gap-1.5 text-sm font-medium text-charcoal/80 hover:text-forest-green transition-colors dark:text-dark-text/80 dark:hover:text-muted-sage"
             >
+              <span className="text-xs" aria-hidden="true">{item.emoji}</span>
               {item.label}
             </Link>
           ))}
