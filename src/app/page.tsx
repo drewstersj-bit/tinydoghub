@@ -63,61 +63,69 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/70 to-transparent dark:from-dark-bg dark:via-dark-bg/70" />
         </div>
 
-        <div className="relative container-wide py-20 lg:py-28">
+        <div className="relative container-wide py-12 lg:py-16">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={stagger}
             className="max-w-3xl"
           >
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-plum/10 text-plum dark:bg-sage/20 dark:text-muted-sage text-sm font-medium mb-6">
-              <span aria-hidden="true">🐾</span>
-              Practical guidance for tiny dogs
-            </motion.div>
-
-            <motion.h1 variants={fadeUp} className="text-5xl lg:text-7xl font-heading font-bold text-ink dark:text-dark-text leading-tight">
-              Everything your
-              <br />
-              <span className="relative">
-                <span className="text-plum dark:text-coral-soft">tiny dog</span>
-                <span className="absolute -bottom-1 left-0 right-0 h-3 bg-sage/20 dark:bg-sage/10 rounded-full -z-10" aria-hidden="true" />
-              </span>
+            <motion.h1 variants={fadeUp} className="text-4xl lg:text-5xl font-heading font-bold text-ink dark:text-dark-text leading-tight">
+              Everything your{' '}
+              <span className="text-plum dark:text-coral-soft">tiny dog</span>
               {' '}needs.
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="mt-6 text-xl text-ink-muted dark:text-dark-muted max-w-xl leading-relaxed">
-              Breed guides, tools and checked places for Chihuahuas, toy breeds and puppies.
+            <motion.p variants={fadeUp} className="mt-4 text-lg text-ink-muted dark:text-dark-muted max-w-xl">
+              Breed guides, walks, dog-friendly places and free tools for Chihuahuas, toy breeds and puppies.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/breed-database"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-plum text-white font-medium hover:bg-plum/90 transition-all shadow-lg shadow-forest-green/20 hover:shadow-xl hover:shadow-forest-green/30"
-              >
-                <span aria-hidden="true">🐾</span>
-                Explore Breeds
+            <motion.div variants={fadeUp} className="mt-6 flex flex-wrap gap-3">
+              <Link href="/breed-database" className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-plum text-white text-sm font-medium hover:bg-plum/90 transition-all">
+                🐾 Explore Breeds
               </Link>
-              <Link
-                href="/tools/harness-finder"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border-2 border-charcoal/10 text-ink font-medium hover:border-plum hover:text-plum transition-all dark:border-dark-border dark:text-dark-text dark:hover:border-muted-sage dark:hover:text-muted-sage"
-              >
-                <span aria-hidden="true">📏</span>
-                Find a Harness
+              <Link href="/tools/harness-finder" className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-grey-200 text-sm font-medium text-ink hover:border-plum hover:text-plum transition-all">
+                📏 Find a Harness
               </Link>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
+      {/* Quick access grid — immediately visible */}
+      <section className="container-wide -mt-2 mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          {[
+            { label: 'Breeds', href: '/breed-database', icon: '🐕' },
+            { label: 'Walks', href: '/walks', icon: '🌳' },
+            { label: 'Places', href: '/places', icon: '☕' },
+            { label: 'Find a Vet', href: '/vets', icon: '🏥' },
+            { label: 'Health', href: '/health', icon: '💚' },
+            { label: 'Training', href: '/training', icon: '🎓' },
+            { label: 'Nutrition', href: '/nutrition', icon: '🥗' },
+            { label: 'Dog Names', href: '/dog-names', icon: '✨' },
+            { label: 'Harness Finder', href: '/tools/harness-finder', icon: '🎯' },
+            { label: 'Growth Tracker', href: '/tools/puppy-growth-tracker', icon: '📈' },
+            { label: 'Size Database', href: '/size-database', icon: '📏' },
+            { label: 'Community', href: '/community', icon: '💬' },
+          ].map((item) => (
+            <Link key={item.href} href={item.href} className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-white border border-grey-200 hover:border-plum/30 hover:shadow-card transition-all text-center">
+              <span className="text-xl" aria-hidden="true">{item.icon}</span>
+              <span className="text-xs font-medium text-ink-light">{item.label}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Breed Explorer — interactive cards */}
-      <section className="container-wide py-20">
+      <section className="container-wide py-10">
         <motion.div
           initial={{ opacity: 1 }}
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
           variants={stagger}
         >
-          <motion.div variants={fadeUp} className="text-center mb-12">
+          <motion.div variants={fadeUp} className="text-center mb-6">
             <h2 className="text-h2 font-heading font-bold text-ink dark:text-dark-text">
               Meet the Tiny Breeds
             </h2>
@@ -227,7 +235,7 @@ export default function HomePage() {
       </section>
 
       {/* Interactive Tools Grid */}
-      <section className="container-wide py-20">
+      <section className="container-wide py-10">
         <motion.div
           initial={{ opacity: 1 }}
           whileInView="visible"
@@ -237,7 +245,7 @@ export default function HomePage() {
           <motion.h2 variants={fadeUp} className="text-h2 font-heading font-bold text-ink dark:text-dark-text text-center mb-4">
             Tools that actually help
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-ink-muted dark:text-dark-muted text-center max-w-md mx-auto mb-12">
+          <motion.p variants={fadeUp} className="text-ink-muted dark:text-dark-muted text-center max-w-md mx-auto mb-6">
             Free interactive tools designed specifically for tiny dogs. No sign-up needed.
           </motion.p>
 
@@ -270,7 +278,7 @@ export default function HomePage() {
       </section>
 
       {/* Why we created Tiny Dog Hub */}
-      <section className="container-narrow py-16">
+      <section className="container-narrow py-8">
         <h2 className="text-h2 font-heading font-bold text-ink dark:text-dark-text text-center mb-8">
           Why we created Tiny Dog Hub
         </h2>
@@ -305,7 +313,7 @@ export default function HomePage() {
       </section>
 
       {/* Made for little bodies — sister shop */}
-      <section className="container-wide py-20">
+      <section className="container-wide py-10">
         <div className="text-center mb-10">
           <h2 className="text-h2 font-heading font-bold text-ink dark:text-dark-text">
             Made for little bodies
@@ -351,7 +359,7 @@ export default function HomePage() {
       </section>
 
       {/* Newsletter / CTA */}
-      <section className="container-narrow py-20 text-center">
+      <section className="container-narrow py-10 text-center">
         <motion.div
           initial={{ opacity: 1 }}
           whileInView="visible"
