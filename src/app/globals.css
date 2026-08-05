@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #FFF8F0;
-  --color-warm-white: #FDFBF7;
-  --color-soft-grey: #E8E4DF;
-  --color-charcoal: #2D2D2D;
-  --color-forest-green: #2D5016;
-  --color-muted-sage: #7A9B6D;
-  --color-warm-beige: #D4C5B2;
-  --color-deep-coral: #E8614D;
-  --color-dark-bg: #1A1A1A;
-  --color-dark-surface: #252525;
-  --color-dark-border: #3A3A3A;
-  --color-dark-text: #E8E4DF;
-  --color-dark-muted: #9A9590;
+  /* Light mode — improved contrast */
+  --color-cream: #FFFAF3;
+  --color-warm-white: #FFFFFF;
+  --color-soft-grey: #E2DDD8;
+  --color-charcoal: #1F1F1F;
+  --color-forest-green: #1D6B35;
+  --color-muted-sage: #4A7C5B;
+  --color-warm-beige: #C4B5A0;
+  --color-deep-coral: #D94F3C;
+
+  /* Dark mode — improved contrast */
+  --color-dark-bg: #151515;
+  --color-dark-surface: #1E1E1E;
+  --color-dark-border: #333333;
+  --color-dark-text: #F2EEEA;
+  --color-dark-muted: #B5AFA8;
+
+  /* Walks section accent colours */
+  --color-plum: #35152E;
+  --color-lemon: #FFD84D;
+  --color-sky: #72C7FF;
+  --color-fresh-green: #4E9B72;
 
   --font-heading: var(--font-manrope), sans-serif;
   --font-body: var(--font-inter), sans-serif;
 
   --radius-card: 0.75rem;
   --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-card-hover: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
 
   --spacing-section: 6rem;
   --spacing-section-sm: 4rem;
