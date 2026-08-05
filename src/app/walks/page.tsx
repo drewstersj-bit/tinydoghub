@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { getPublishedWalks, type Walk } from '@/lib/walks-data';
@@ -88,8 +89,15 @@ export default function WalksPage() {
       <Breadcrumbs />
       <div className="container-wide py-12">
         {/* Hero */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-forest-green via-forest-green/90 to-muted-sage p-8 lg:p-12 mb-10">
-          <div className="absolute top-4 right-8 text-7xl opacity-15 select-none" aria-hidden="true">🐾</div>
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-plum via-plum-light to-plum mb-10">
+          <Image
+            src="/images/tinydoghub_1842789260.webp"
+            alt=""
+            fill
+            className="object-cover opacity-15 mix-blend-luminosity"
+            aria-hidden="true"
+          />
+          <div className="relative p-8 lg:p-12">
           <p className="text-sm font-medium text-white/70 uppercase tracking-wider mb-2">Little Walks for Little Legs</p>
           <h1 className="text-3xl lg:text-4xl font-heading font-bold text-white mb-3">
             Find a little adventure
@@ -109,6 +117,7 @@ export default function WalksPage() {
               aria-label="Search walks"
             />
             <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-grey-500" aria-hidden="true">🔍</span>
+          </div>
           </div>
         </div>
 

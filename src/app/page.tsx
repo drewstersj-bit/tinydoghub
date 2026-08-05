@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
@@ -49,9 +50,19 @@ export default function HomePage() {
     <div className="flex flex-col">
       {/* Hero — warm, inviting, illustration-style */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-cream via-warm-white to-warm-beige/30 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg" />
-        <div className="absolute top-10 right-10 text-8xl opacity-20 select-none" aria-hidden="true">🐾</div>
-        <div className="absolute bottom-10 left-10 text-6xl opacity-10 select-none" aria-hidden="true">🦴</div>
+        <div className="absolute inset-0 bg-gradient-to-br from-cream via-white to-grey-100 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg" />
+        {/* Hero decorative image */}
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
+          <Image
+            src="/images/tinydoghub_1410466767.webp"
+            alt=""
+            fill
+            className="object-cover object-center opacity-20 dark:opacity-10"
+            priority
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/80 to-transparent dark:from-dark-bg dark:via-dark-bg/80" />
+        </div>
 
         <div className="relative container-wide py-20 lg:py-28">
           <motion.div

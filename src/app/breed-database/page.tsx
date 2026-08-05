@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 
 interface Breed {
@@ -138,14 +139,26 @@ export default function BreedDatabasePage() {
     <>
       <Breadcrumbs />
       <div className="container-wide py-12">
-        {/* Header */}
-        <div className="max-w-2xl mb-12">
+        {/* Header with decorative image */}
+        <div className="relative mb-12">
+          <div className="absolute right-0 top-0 w-48 h-48 hidden md:block">
+            <Image
+              src="/images/tinydoghub_2119138752.webp"
+              alt=""
+              width={192}
+              height={192}
+              className="rounded-2xl object-cover opacity-80"
+              aria-hidden="true"
+            />
+          </div>
+          <div className="max-w-2xl">
           <h1 className="text-h1 font-heading font-bold text-ink dark:text-dark-text">
             Tiny Dog Breed Database
           </h1>
           <p className="mt-4 text-body-lg text-ink-muted dark:text-dark-muted">
             Interactive guide to every toy and miniature breed. Tap any breed for temperament, health, sizing and daily care.
           </p>
+          </div>
         </div>
 
         {/* Search */}

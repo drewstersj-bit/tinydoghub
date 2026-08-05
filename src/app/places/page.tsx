@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { getPublishedVenues, getWelcomeLabelText, getWelcomeLabelStyle, type Venue, type TriState } from '@/lib/places-data';
@@ -78,8 +79,15 @@ export default function PlacesPage() {
       <Breadcrumbs />
       <div className="container-wide py-12">
         {/* Hero */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-plum via-plum-light to-plum p-8 lg:p-12 mb-10">
-          <div className="absolute top-6 right-8 text-7xl opacity-10 select-none" aria-hidden="true">🐾</div>
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-plum via-plum-light to-plum mb-10">
+          <Image
+            src="/images/tinydoghub_1958899002.webp"
+            alt=""
+            fill
+            className="object-cover opacity-15 mix-blend-luminosity"
+            aria-hidden="true"
+          />
+          <div className="relative p-8 lg:p-12">
           <p className="text-sm font-medium text-white/80 uppercase tracking-wider mb-2">Tiny Dog Welcome</p>
           <h1 className="text-3xl lg:text-4xl font-heading font-bold text-white mb-3">
             Little dogs. Big welcomes.
@@ -97,6 +105,7 @@ export default function PlacesPage() {
               aria-label="Search venues"
             />
             <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-grey-500" aria-hidden="true">🔍</span>
+          </div>
           </div>
         </div>
 
