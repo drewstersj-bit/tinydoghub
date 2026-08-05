@@ -19,11 +19,11 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    default: 'TinyDogHub — The UK\'s Home for Tiny Dogs',
+    default: 'Tiny Dog Hub: Practical Help for Chihuahuas & Small Dogs',
     template: '%s | TinyDogHub',
   },
   description:
-    'The definitive UK resource for Chihuahua, toy breed and puppy owners. Expert guides, tools, size charts and trusted recommendations.',
+    'Practical guidance for Chihuahua, toy breed and puppy owners. Breed guides, checked walks, dog-friendly places and free interactive tools.',
   metadataBase: new URL('https://tinydoghub.co.uk'),
   openGraph: {
     type: 'website',

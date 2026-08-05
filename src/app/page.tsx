@@ -72,8 +72,8 @@ export default function HomePage() {
             className="max-w-3xl"
           >
             <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-plum/10 text-plum dark:bg-sage/20 dark:text-muted-sage text-sm font-medium mb-6">
-              <span aria-hidden="true">🇬🇧</span>
-              The UK&apos;s trusted tiny dog resource
+              <span aria-hidden="true">🐾</span>
+              Practical guidance for tiny dogs
             </motion.div>
 
             <motion.h1 variants={fadeUp} className="text-5xl lg:text-7xl font-heading font-bold text-ink dark:text-dark-text leading-tight">
@@ -87,7 +87,7 @@ export default function HomePage() {
             </motion.h1>
 
             <motion.p variants={fadeUp} className="mt-6 text-xl text-ink-muted dark:text-dark-muted max-w-xl leading-relaxed">
-              Breed guides, interactive tools, size charts and expert care advice — built by tiny dog owners, for tiny dog owners.
+              Breed guides, tools and checked places for Chihuahuas, toy breeds and puppies.
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
@@ -113,7 +113,7 @@ export default function HomePage() {
       {/* Breed Explorer — interactive cards */}
       <section className="container-wide py-20">
         <motion.div
-          initial="hidden"
+          initial={{ opacity: 1 }}
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
           variants={stagger}
@@ -152,7 +152,7 @@ export default function HomePage() {
               href="/breed-database"
               className="inline-flex items-center gap-2 text-sm font-medium text-plum dark:text-coral-soft hover:underline"
             >
-              View all 30+ breeds →
+              View all breed guides →
             </Link>
           </div>
         </motion.div>
@@ -230,7 +230,7 @@ export default function HomePage() {
       {/* Interactive Tools Grid */}
       <section className="container-wide py-20">
         <motion.div
-          initial="hidden"
+          initial={{ opacity: 1 }}
           whileInView="visible"
           viewport={{ once: true }}
           variants={stagger}
@@ -248,8 +248,8 @@ export default function HomePage() {
               { title: 'Puppy Growth Tracker', desc: 'Track your puppy\'s weight and compare to breed growth curves.', icon: '📈', href: '/tools/puppy-growth-tracker', accent: 'border-l-forest-green' },
               { title: 'Size Database', desc: 'Average chest, neck and weight for every tiny breed.', icon: '📏', href: '/size-database', accent: 'border-l-muted-sage' },
               { title: 'Dog Walks Map', desc: 'Find small-dog-friendly routes near you with interactive maps.', icon: '🗺️', href: '/walks', accent: 'border-l-warm-beige' },
-              { title: 'Dog Name Finder', desc: 'Browse 1000+ names filtered by personality and style.', icon: '✨', href: '/dog-names', accent: 'border-l-purple-400' },
-              { title: 'Dog Friendly Places', desc: 'Cafes, hotels and holidays that truly welcome tiny dogs.', icon: '☕', href: '/dog-friendly/cafes', accent: 'border-l-amber-400' },
+              { title: 'Dog Name Finder', desc: 'Browse hundreds of names filtered by personality and style.', icon: '✨', href: '/dog-names', accent: 'border-l-purple-400' },
+              { title: 'Dog Friendly Places', desc: 'Cafes, hotels and holidays that truly welcome tiny dogs.', icon: '☕', href: '/places', accent: 'border-l-amber-400' },
             ].map((tool) => (
               <motion.div key={tool.title} variants={fadeUp}>
                 <Link
@@ -270,30 +270,91 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Trust / Social proof */}
+      {/* Why we created Tiny Dog Hub */}
+      <section className="container-narrow py-16">
+        <h2 className="text-h2 font-heading font-bold text-ink dark:text-dark-text text-center mb-8">
+          Why we created Tiny Dog Hub
+        </h2>
+        <div className="max-w-2xl mx-auto space-y-4 text-ink-muted dark:text-dark-muted leading-relaxed">
+          <p>
+            Tiny dogs experience the world differently. Harness fit, cold weather, crowded cafés and even an ordinary country walk can present different challenges when your dog weighs only a few kilograms.
+          </p>
+          <p>
+            Tiny Dog Hub was created by the people behind My Chi and Me to bring genuinely useful information for Chihuahuas, puppies and other little dogs together in one friendly, carefully checked place.
+          </p>
+        </div>
+      </section>
+
+      {/* Trust / Honest stats */}
       <section className="bg-white dark:bg-dark-surface border-y border-grey-200/30 dark:border-dark-border">
         <div className="container-wide py-16">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-4xl font-heading font-bold text-plum dark:text-coral-soft">30+</p>
-              <p className="mt-2 text-sm text-ink-muted dark:text-dark-muted">Tiny breeds covered</p>
+              <p className="text-lg font-heading font-bold text-plum dark:text-coral-soft">12 detailed breed guides and growing</p>
             </div>
             <div>
-              <p className="text-4xl font-heading font-bold text-plum dark:text-coral-soft">100%</p>
-              <p className="mt-2 text-sm text-ink-muted dark:text-dark-muted">Free tools, no sign-up</p>
+              <p className="text-lg font-heading font-bold text-plum dark:text-coral-soft">Free to use — no display advertising</p>
             </div>
             <div>
-              <p className="text-4xl font-heading font-bold text-plum dark:text-coral-soft">0</p>
-              <p className="mt-2 text-sm text-ink-muted dark:text-dark-muted">Sponsored content or ads</p>
+              <p className="text-lg font-heading font-bold text-plum dark:text-coral-soft">Connected to My Chi and Me, our sister shop</p>
             </div>
           </div>
+          <p className="mt-8 text-center text-xs text-grey-500 dark:text-dark-subtle max-w-lg mx-auto">
+            Tiny Dog Hub is connected to our sister shop, My Chi and Me. Product links are clearly identified.
+          </p>
         </div>
+      </section>
+
+      {/* Made for little bodies — sister shop */}
+      <section className="container-wide py-20">
+        <div className="text-center mb-10">
+          <h2 className="text-h2 font-heading font-bold text-ink dark:text-dark-text">
+            Made for little bodies
+          </h2>
+          <p className="mt-3 text-ink-muted dark:text-dark-muted max-w-xl mx-auto">
+            Finding harnesses and accessories that genuinely fit a tiny dog can be difficult. Explore practical favourites from our sister shop, My Chi and Me.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <a
+            href="https://mychiandme.co.uk/collections/leads-and-harnesses?utm_source=tinydoghub&utm_medium=referral&utm_campaign=sister_shop&utm_content=homepage"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block p-6 rounded-2xl bg-white dark:bg-dark-surface border border-grey-200/30 dark:border-dark-border text-center hover:shadow-card-hover transition-all hover:-translate-y-1"
+          >
+            <span className="text-3xl block mb-3" aria-hidden="true">🐕‍🦺</span>
+            <h3 className="font-heading font-semibold text-ink dark:text-dark-text">Tiny Trails Harnesses</h3>
+          </a>
+          <a
+            href="https://mychiandme.co.uk/collections/leads-and-harnesses?utm_source=tinydoghub&utm_medium=referral&utm_campaign=sister_shop&utm_content=homepage_leads"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block p-6 rounded-2xl bg-white dark:bg-dark-surface border border-grey-200/30 dark:border-dark-border text-center hover:shadow-card-hover transition-all hover:-translate-y-1"
+          >
+            <span className="text-3xl block mb-3" aria-hidden="true">🔦</span>
+            <h3 className="font-heading font-semibold text-ink dark:text-dark-text">Reflective Leads</h3>
+          </a>
+          <a
+            href="https://mychiandme.co.uk/collections/travel?utm_source=tinydoghub&utm_medium=referral&utm_campaign=sister_shop&utm_content=homepage"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block p-6 rounded-2xl bg-white dark:bg-dark-surface border border-grey-200/30 dark:border-dark-border text-center hover:shadow-card-hover transition-all hover:-translate-y-1"
+          >
+            <span className="text-3xl block mb-3" aria-hidden="true">✈️</span>
+            <h3 className="font-heading font-semibold text-ink dark:text-dark-text">Travel Accessories</h3>
+          </a>
+        </div>
+
+        <p className="mt-6 text-center text-xs text-grey-500 dark:text-dark-subtle">
+          From our sister shop, My Chi and Me
+        </p>
       </section>
 
       {/* Newsletter / CTA */}
       <section className="container-narrow py-20 text-center">
         <motion.div
-          initial="hidden"
+          initial={{ opacity: 1 }}
           whileInView="visible"
           viewport={{ once: true }}
           variants={stagger}

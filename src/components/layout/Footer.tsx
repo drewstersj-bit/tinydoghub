@@ -25,8 +25,7 @@ const FOOTER_SECTIONS = [
     title: 'Discover',
     links: [
       { label: 'Dog Walks', href: '/walks' },
-      { label: 'Dog Friendly Cafes', href: '/dog-friendly/cafes' },
-      { label: 'Dog Friendly Hotels', href: '/dog-friendly/hotels' },
+      { label: 'Dog Friendly Places', href: '/places' },
       { label: 'Dog Names', href: '/dog-names' },
       { label: 'Community', href: '/community' },
     ],
@@ -38,13 +37,24 @@ const FOOTER_SECTIONS = [
       { label: 'Contact', href: '/contact' },
     ],
   },
+  {
+    title: 'Trust & Legal',
+    links: [
+      { label: 'About', href: '/about' },
+      { label: 'Editorial Standards', href: '/editorial-standards' },
+      { label: 'Commercial Disclosure', href: '/commercial-disclosure' },
+      { label: 'Privacy', href: '/privacy' },
+      { label: 'Terms', href: '/terms' },
+      { label: 'Corrections', href: '/corrections' },
+    ],
+  },
 ];
 
 export function Footer() {
   return (
     <footer className="border-t border-grey-200 bg-white dark:bg-dark-surface dark:border-dark-border mt-20">
       <div className="container-wide py-12 lg:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {FOOTER_SECTIONS.map((section) => (
             <div key={section.title}>
               <h3 className="font-heading font-semibold text-sm text-plum dark:text-dark-text mb-3">
@@ -52,7 +62,7 @@ export function Footer() {
               </h3>
               <ul className="space-y-2">
                 {section.links.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.href + link.label}>
                     <Link
                       href={link.href}
                       className="text-sm text-ink-muted hover:text-plum transition-colors dark:text-dark-muted dark:hover:text-coral-soft"
@@ -68,16 +78,12 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-grey-200 dark:border-dark-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-ink-muted dark:text-dark-muted">
-            © {new Date().getFullYear()} TinyDogHub. Built for tiny dog lovers across the UK.
+            © 2026 Tiny Dog Hub. Connected to My Chi and Me.
           </p>
           <p className="text-xs text-grey-500 dark:text-dark-subtle">
-            Trusted retailers:{' '}
+            Sister shop:{' '}
             <a href="https://mychiandme.co.uk" target="_blank" rel="noopener noreferrer" className="underline hover:text-plum dark:hover:text-coral-soft">
               My Chi and Me
-            </a>
-            {' · '}
-            <a href="https://mypupandme.co.uk" target="_blank" rel="noopener noreferrer" className="underline hover:text-plum dark:hover:text-coral-soft">
-              My Pup and Me
             </a>
           </p>
         </div>
