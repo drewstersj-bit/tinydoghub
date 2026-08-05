@@ -109,8 +109,8 @@ export default function HomePage() {
             { label: 'Size Database', href: '/size-database', icon: '📏' },
             { label: 'Community', href: '/community', icon: '💬' },
           ].map((item) => (
-            <Link key={item.href} href={item.href} className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-white border border-grey-200 hover:border-plum/30 hover:shadow-card transition-all text-center">
-              <span className="text-xl" aria-hidden="true">{item.icon}</span>
+            <Link key={item.href} href={item.href} className="flex flex-col items-center gap-2 p-4 rounded-xl bg-white border border-grey-200 hover:border-plum/30 hover:shadow-card transition-all text-center">
+              <span className="text-3xl" aria-hidden="true">{item.icon}</span>
               <span className="text-xs font-medium text-ink-light">{item.label}</span>
             </Link>
           ))}
@@ -169,7 +169,7 @@ export default function HomePage() {
       <section className="bg-gradient-to-br from-forest-green to-forest-green/90 dark:from-forest-green/80 dark:to-forest-green/60 rounded-3xl mx-4 lg:mx-auto lg:max-w-5xl overflow-hidden">
         <div className="p-8 lg:p-12">
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl" aria-hidden="true">🔍</span>
+            <span className="text-3xl" aria-hidden="true">🐾</span>
             <h2 className="text-h3 font-heading font-bold text-white">
               Quick Breed Finder
             </h2>
