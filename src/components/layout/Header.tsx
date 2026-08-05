@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   { label: 'Breeds', href: '/breed-database' },
   { label: 'Health', href: '/health' },
   { label: 'Walks', href: '/walks' },
-  { label: 'Dog Friendly', href: '/dog-friendly/cafes' },
+  { label: 'Dog-Friendly Places', href: '/places' },
   { label: 'Tools', href: '/tools' },
   { label: 'About', href: '/about' },
 ];
