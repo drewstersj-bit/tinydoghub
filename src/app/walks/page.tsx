@@ -94,7 +94,7 @@ export default function WalksPage() {
             src="/images/tinydoghub_1842789260.webp"
             alt=""
             fill
-            className="object-cover opacity-15 mix-blend-luminosity"
+            className="object-cover opacity-25"
             aria-hidden="true"
           />
           <div className="relative p-8 lg:p-12">

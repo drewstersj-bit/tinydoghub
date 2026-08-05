@@ -57,7 +57,7 @@ export default function HomePage() {
             src="/images/tinydoghub_1410466767.webp"
             alt=""
             fill
-            className="object-cover object-center opacity-20 dark:opacity-10"
+            className="object-cover object-center opacity-30"
             priority
             aria-hidden="true"
           />

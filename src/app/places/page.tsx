@@ -84,7 +84,7 @@ export default function PlacesPage() {
             src="/images/tinydoghub_1958899002.webp"
             alt=""
             fill
-            className="object-cover opacity-15 mix-blend-luminosity"
+            className="object-cover opacity-25"
             aria-hidden="true"
           />
           <div className="relative p-8 lg:p-12">
