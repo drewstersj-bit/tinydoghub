@@ -1,34 +1,24 @@
 import { WalkDetail } from './WalkDetail';
-import { getPublishedWalks } from '@/lib/walks-data';
+import { createClient } from '@supabase/supabase-js';
 
-// All walk slugs that need static pages generated
-const ALL_WALK_SLUGS = [
-  // Original walks
-  'dunham-massey-deer-park',
-  'lyme-park-cage-loop',
-  'delamere-forest-blakemere-trail',
-  'fletcher-moss-park-didsbury',
-  'abersoch-beach-walk',
-  'tatton-park-mere-circuit',
-  // Major cities walks
-  'sefton-park-loop',
-  'plymouth-hoe-promenade',
-  'hyde-park-serpentine-loop',
-  'hampstead-heath-parliament-hill',
-  'cannon-hill-park-birmingham',
-  'inverleith-park-edinburgh',
-  'bristol-harbourside-loop',
-  'kelvingrove-park-glasgow',
-  'bute-park-cardiff',
-  'wollaton-park-nottingham',
-  'jesmond-dene-newcastle',
-  'bath-skyline-walk-short',
-  'york-city-walls-loop',
-  'endcliffe-park-sheffield',
-];
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://tnlcgmgnqwsjcaanrlfv.supabase.co';
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_KfjveSJzYJJ3hBvqLnEcfQ_OHyRV2Wq';
 
-export function generateStaticParams() {
-  return ALL_WALK_SLUGS.map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  const supabase = createClient(supabaseUrl, supabaseKey);
+  const { data } = await supabase.from('walks').select('slug').eq('status', 'published');
+  if (data && data.length > 0) {
+    return data.map((w) => ({ slug: w.slug }));
+  }
+  // Fallback to known slugs if Supabase is unreachable at build time
+  return [
+    { slug: 'dunham-massey-deer-park' },
+    { slug: 'delamere-forest-blakemere-trail' },
+    { slug: 'fletcher-moss-park-didsbury' },
+    { slug: 'abersoch-beach-walk' },
+    { slug: 'tatton-park-mere-circuit' },
+    { slug: 'lyme-park-cage-loop' },
+  ];
 }
 
 export default async function WalkPage({ params }: { params: Promise<{ slug: string }> }) {
