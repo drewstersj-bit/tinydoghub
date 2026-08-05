@@ -71,16 +71,15 @@ export function WalkDetail({ slug }: { slug: string }) {
           <div className="rounded-2xl overflow-hidden border border-soft-grey/30 dark:border-dark-border shadow-card">
             <iframe
               title={`Map showing ${walk.title} starting point`}
-              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${walk.start.latitude},${walk.start.longitude}&zoom=14&maptype=terrain`}
+              src={`https://www.openstreetmap.org/export/embed.html?bbox=${walk.start.longitude - 0.02},${walk.start.latitude - 0.01},${walk.start.longitude + 0.02},${walk.start.latitude + 0.01}&layer=mapnik&marker=${walk.start.latitude},${walk.start.longitude}`}
               width="100%"
               height="300"
               style={{ border: 0 }}
-              allowFullScreen
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
               className="w-full"
             />
           </div>
+          <p className="mt-1 text-xs text-charcoal/40 dark:text-dark-muted">© OpenStreetMap contributors</p>
           <div className="mt-3 flex flex-wrap gap-3">
             <a
               href={`https://www.google.com/maps/dir/?api=1&destination=${walk.start.latitude},${walk.start.longitude}`}
