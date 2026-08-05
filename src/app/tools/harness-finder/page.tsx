@@ -17,18 +17,19 @@ interface Recommendation {
 }
 
 const SIZE_CHART = [
-  { label: 'XXXS', chestMin: 20, chestMax: 25 },
-  { label: 'XXS', chestMin: 25, chestMax: 30 },
-  { label: 'XS', chestMin: 30, chestMax: 35 },
-  { label: 'S', chestMin: 35, chestMax: 40 },
+  { label: 'XXXS', chestMin: 14, chestMax: 22 },
+  { label: 'XXS', chestMin: 22, chestMax: 28 },
+  { label: 'XS', chestMin: 28, chestMax: 34 },
+  { label: 'S', chestMin: 34, chestMax: 40 },
   { label: 'M', chestMin: 40, chestMax: 48 },
+  { label: 'L', chestMin: 48, chestMax: 58 },
 ];
 
 function calculateHarness(data: FormData): Recommendation | null {
   const chest = parseFloat(data.chest);
   if (isNaN(chest) || chest <= 0) return null;
 
-  const match = SIZE_CHART.find((s) => chest >= s.chestMin && chest < s.chestMax);
+  const match = SIZE_CHART.find((s) => chest >= s.chestMin && chest <= s.chestMax);
   if (!match) return null;
 
   const type = data.pulling === 'heavy' ? 'No-pull harness' : 'Step-in air mesh harness';
@@ -187,9 +188,10 @@ export default function HarnessFinderPage() {
                 </div>
               </div>
             ) : (
-              <div className="p-6 rounded-card border border-deep-coral/30 bg-deep-coral/5">
-                <p className="text-body text-charcoal/70 dark:text-dark-muted">
-                  We couldn&apos;t find a matching size. Please check your chest measurement is correct (typically 20–48cm for tiny dogs).
+              <div className="p-6 rounded-card border border-coral/30 bg-coral/5">
+                <p className="text-sm text-ink-light">
+                  We couldn&apos;t find a matching size for that measurement. Typical chest measurements for tiny dogs range from 14–48cm.
+                  If your dog&apos;s chest is outside this range, please <a href="/contact" className="text-plum underline">contact us</a> for sizing help.
                 </p>
               </div>
             )}
