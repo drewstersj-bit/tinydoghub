@@ -140,10 +140,10 @@ export default function BreedDatabasePage() {
       <div className="container-wide py-12">
         {/* Header */}
         <div className="max-w-2xl mb-12">
-          <h1 className="text-h1 font-heading font-bold text-charcoal dark:text-dark-text">
+          <h1 className="text-h1 font-heading font-bold text-ink dark:text-dark-text">
             Tiny Dog Breed Database
           </h1>
-          <p className="mt-4 text-body-lg text-charcoal/70 dark:text-dark-muted">
+          <p className="mt-4 text-body-lg text-ink-muted dark:text-dark-muted">
             Interactive guide to every toy and miniature breed. Tap any breed for temperament, health, sizing and daily care.
           </p>
         </div>
@@ -156,10 +156,10 @@ export default function BreedDatabasePage() {
               placeholder="Search breeds..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 rounded-full border border-soft-grey/60 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-forest-green/30 dark:bg-dark-surface dark:border-dark-border dark:text-dark-text"
+              className="w-full pl-10 pr-4 py-3 rounded-full border border-grey-200/60 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-forest-green/30 dark:bg-dark-surface dark:border-dark-border dark:text-dark-text"
               aria-label="Search breeds"
             />
-            <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-charcoal/30" aria-hidden="true">🔍</span>
+            <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-grey-300" aria-hidden="true">🔍</span>
           </div>
         </div>
 
@@ -171,8 +171,8 @@ export default function BreedDatabasePage() {
               onClick={() => setFilter(f.key)}
               className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 filter === f.key
-                  ? 'bg-forest-green text-white shadow-md'
-                  : 'bg-soft-grey/30 text-charcoal/70 hover:bg-soft-grey/50 dark:bg-dark-border/30 dark:text-dark-muted dark:hover:bg-dark-border/50'
+                  ? 'bg-plum text-white shadow-md'
+                  : 'bg-grey-100/30 text-ink-muted hover:bg-grey-100/50 dark:bg-dark-border/30 dark:text-dark-muted dark:hover:bg-dark-border/50'
               }`}
             >
               <span aria-hidden="true">{f.emoji}</span>
@@ -182,7 +182,7 @@ export default function BreedDatabasePage() {
         </div>
 
         {/* Results count */}
-        <p className="text-sm text-charcoal/50 dark:text-dark-muted mb-6">
+        <p className="text-sm text-grey-500 dark:text-dark-muted mb-6">
           Showing {filteredBreeds.length} breed{filteredBreeds.length !== 1 ? 's' : ''}
         </p>
 
@@ -200,30 +200,30 @@ export default function BreedDatabasePage() {
               >
                 <Link
                   href={`/breeds/${breed.slug}`}
-                  className={`group block relative overflow-hidden rounded-2xl bg-gradient-to-br ${breed.color} border border-soft-grey/20 dark:border-dark-border/30 p-6 transition-all hover:shadow-xl hover:-translate-y-1`}
+                  className={`group block relative overflow-hidden rounded-2xl bg-gradient-to-br ${breed.color} border border-grey-200/20 dark:border-dark-border/30 p-6 transition-all hover:shadow-xl hover:-translate-y-1`}
                   onMouseEnter={() => setHoveredBreed(breed.slug)}
                   onMouseLeave={() => setHoveredBreed(null)}
                 >
                   {/* Emoji avatar */}
                   <div className="flex items-start justify-between mb-4">
                     <span className="text-5xl" aria-hidden="true">{breed.emoji}</span>
-                    <span className="px-2.5 py-1 rounded-full bg-white/60 dark:bg-dark-surface/60 text-xs font-medium text-charcoal/70 dark:text-dark-muted">
+                    <span className="px-2.5 py-1 rounded-full bg-white/60 dark:bg-dark-surface/60 text-xs font-medium text-ink-muted dark:text-dark-muted">
                       {breed.size}
                     </span>
                   </div>
 
                   {/* Name and description */}
-                  <h3 className="font-heading font-bold text-lg text-charcoal dark:text-dark-text group-hover:text-forest-green dark:group-hover:text-muted-sage transition-colors">
+                  <h3 className="font-heading font-bold text-lg text-ink dark:text-dark-text group-hover:text-plum dark:group-hover:text-muted-sage transition-colors">
                     {breed.name}
                   </h3>
-                  <p className="mt-1 text-sm text-charcoal/60 dark:text-dark-muted leading-relaxed">
+                  <p className="mt-1 text-sm text-ink-muted dark:text-dark-muted leading-relaxed">
                     {breed.description}
                   </p>
 
                   {/* Quick stats */}
                   <div className="mt-4 flex flex-wrap gap-2">
                     {breed.personality.map((trait) => (
-                      <span key={trait} className="px-2.5 py-1 rounded-full bg-white/50 dark:bg-dark-surface/50 text-xs text-charcoal/70 dark:text-dark-muted">
+                      <span key={trait} className="px-2.5 py-1 rounded-full bg-white/50 dark:bg-dark-surface/50 text-xs text-ink-muted dark:text-dark-muted">
                         {trait}
                       </span>
                     ))}
@@ -240,16 +240,16 @@ export default function BreedDatabasePage() {
                       >
                         <div className="mt-4 pt-4 border-t border-charcoal/10 dark:border-dark-border/30 grid grid-cols-3 gap-3 text-center">
                           <div>
-                            <p className="text-xs text-charcoal/40 dark:text-dark-muted">Weight</p>
-                            <p className="text-sm font-medium text-charcoal dark:text-dark-text">{breed.weight}</p>
+                            <p className="text-xs text-grey-500 dark:text-dark-muted">Weight</p>
+                            <p className="text-sm font-medium text-ink dark:text-dark-text">{breed.weight}</p>
                           </div>
                           <div>
-                            <p className="text-xs text-charcoal/40 dark:text-dark-muted">Exercise</p>
-                            <p className="text-sm font-medium text-charcoal dark:text-dark-text">{breed.exercise}</p>
+                            <p className="text-xs text-grey-500 dark:text-dark-muted">Exercise</p>
+                            <p className="text-sm font-medium text-ink dark:text-dark-text">{breed.exercise}</p>
                           </div>
                           <div>
-                            <p className="text-xs text-charcoal/40 dark:text-dark-muted">Grooming</p>
-                            <p className="text-sm font-medium text-charcoal dark:text-dark-text">{breed.grooming}</p>
+                            <p className="text-xs text-grey-500 dark:text-dark-muted">Grooming</p>
+                            <p className="text-sm font-medium text-ink dark:text-dark-text">{breed.grooming}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -264,7 +264,7 @@ export default function BreedDatabasePage() {
         {filteredBreeds.length === 0 && (
           <div className="text-center py-16">
             <span className="text-4xl block mb-3" aria-hidden="true">🔍</span>
-            <p className="text-charcoal/60 dark:text-dark-muted">No breeds match your filters. Try a different combination.</p>
+            <p className="text-ink-muted dark:text-dark-muted">No breeds match your filters. Try a different combination.</p>
           </div>
         )}
       </div>

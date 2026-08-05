@@ -1,28 +1,39 @@
 @import "tailwindcss";
 
 @theme {
-  /* Light mode — improved contrast */
-  --color-cream: #FFFAF3;
-  --color-warm-white: #FFFFFF;
-  --color-soft-grey: #E2DDD8;
-  --color-charcoal: #1F1F1F;
-  --color-forest-green: #1D6B35;
-  --color-muted-sage: #4A7C5B;
-  --color-warm-beige: #C4B5A0;
-  --color-deep-coral: #D94F3C;
+  /* Brand colours from logo */
+  --color-plum: #3D1A35;
+  --color-plum-light: #5C2D50;
+  --color-coral: #E84040;
+  --color-coral-soft: #FF6B6B;
 
-  /* Dark mode — improved contrast */
-  --color-dark-bg: #151515;
-  --color-dark-surface: #1E1E1E;
-  --color-dark-border: #333333;
-  --color-dark-text: #F2EEEA;
-  --color-dark-muted: #B5AFA8;
+  /* Light mode palette — high contrast, readable */
+  --color-cream: #FFF9F4;
+  --color-white: #FFFFFF;
+  --color-grey-100: #F5F0EB;
+  --color-grey-200: #E8E2DC;
+  --color-grey-300: #D4CCC4;
+  --color-grey-500: #8C7F75;
+  --color-grey-700: #5A4D44;
+  --color-ink: #1A1A1A;
+  --color-ink-light: #3D3530;
+  --color-ink-muted: #6B5E56;
 
-  /* Walks section accent colours */
-  --color-plum: #35152E;
+  /* Functional colours */
+  --color-green: #1B7A3D;
+  --color-green-soft: #E8F5ED;
+  --color-sage: #4A7C5B;
   --color-lemon: #FFD84D;
-  --color-sky: #72C7FF;
+  --color-sky: #4DA8E8;
   --color-fresh-green: #4E9B72;
+
+  /* Dark mode */
+  --color-dark-bg: #121010;
+  --color-dark-surface: #1C1818;
+  --color-dark-border: #2E2828;
+  --color-dark-text: #F0ECE8;
+  --color-dark-muted: #B0A8A0;
+  --color-dark-subtle: #807870;
 
   --font-heading: var(--font-manrope), sans-serif;
   --font-body: var(--font-inter), sans-serif;
@@ -43,9 +54,11 @@
   body {
     font-family: var(--font-body);
     background-color: var(--color-cream);
-    color: var(--color-charcoal);
+    color: var(--color-ink);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 1rem;
+    line-height: 1.7;
   }
 
   .dark body,
@@ -56,6 +69,11 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
+    color: var(--color-plum);
+  }
+
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: var(--color-dark-text);
   }
 }
 

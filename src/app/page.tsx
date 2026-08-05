@@ -60,36 +60,36 @@ export default function HomePage() {
             variants={stagger}
             className="max-w-3xl"
           >
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-forest-green/10 text-forest-green dark:bg-muted-sage/20 dark:text-muted-sage text-sm font-medium mb-6">
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-plum/10 text-plum dark:bg-sage/20 dark:text-muted-sage text-sm font-medium mb-6">
               <span aria-hidden="true">🇬🇧</span>
               The UK&apos;s trusted tiny dog resource
             </motion.div>
 
-            <motion.h1 variants={fadeUp} className="text-5xl lg:text-7xl font-heading font-bold text-charcoal dark:text-dark-text leading-tight">
+            <motion.h1 variants={fadeUp} className="text-5xl lg:text-7xl font-heading font-bold text-ink dark:text-dark-text leading-tight">
               Everything your
               <br />
               <span className="relative">
-                <span className="text-forest-green dark:text-muted-sage">tiny dog</span>
-                <span className="absolute -bottom-1 left-0 right-0 h-3 bg-muted-sage/20 dark:bg-muted-sage/10 rounded-full -z-10" aria-hidden="true" />
+                <span className="text-plum dark:text-coral-soft">tiny dog</span>
+                <span className="absolute -bottom-1 left-0 right-0 h-3 bg-sage/20 dark:bg-sage/10 rounded-full -z-10" aria-hidden="true" />
               </span>
               {' '}needs.
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="mt-6 text-xl text-charcoal/70 dark:text-dark-muted max-w-xl leading-relaxed">
+            <motion.p variants={fadeUp} className="mt-6 text-xl text-ink-muted dark:text-dark-muted max-w-xl leading-relaxed">
               Breed guides, interactive tools, size charts and expert care advice — built by tiny dog owners, for tiny dog owners.
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/breed-database"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-forest-green text-white font-medium hover:bg-forest-green/90 transition-all shadow-lg shadow-forest-green/20 hover:shadow-xl hover:shadow-forest-green/30"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-plum text-white font-medium hover:bg-plum/90 transition-all shadow-lg shadow-forest-green/20 hover:shadow-xl hover:shadow-forest-green/30"
               >
                 <span aria-hidden="true">🐾</span>
                 Explore Breeds
               </Link>
               <Link
                 href="/tools/harness-finder"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border-2 border-charcoal/10 text-charcoal font-medium hover:border-forest-green hover:text-forest-green transition-all dark:border-dark-border dark:text-dark-text dark:hover:border-muted-sage dark:hover:text-muted-sage"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border-2 border-charcoal/10 text-ink font-medium hover:border-plum hover:text-plum transition-all dark:border-dark-border dark:text-dark-text dark:hover:border-muted-sage dark:hover:text-muted-sage"
               >
                 <span aria-hidden="true">📏</span>
                 Find a Harness
@@ -108,10 +108,10 @@ export default function HomePage() {
           variants={stagger}
         >
           <motion.div variants={fadeUp} className="text-center mb-12">
-            <h2 className="text-h2 font-heading font-bold text-charcoal dark:text-dark-text">
+            <h2 className="text-h2 font-heading font-bold text-ink dark:text-dark-text">
               Meet the Tiny Breeds
             </h2>
-            <p className="mt-3 text-charcoal/60 dark:text-dark-muted max-w-md mx-auto">
+            <p className="mt-3 text-ink-muted dark:text-dark-muted max-w-md mx-auto">
               Tap a breed to discover their personality, care needs and average sizes.
             </p>
           </motion.div>
@@ -121,14 +121,14 @@ export default function HomePage() {
               <motion.div key={breed.name} variants={fadeUp}>
                 <Link
                   href={breed.href}
-                  className={`group block p-5 rounded-2xl ${breed.color} border border-transparent hover:border-forest-green/20 dark:hover:border-muted-sage/20 transition-all hover:scale-105 hover:shadow-lg text-center`}
+                  className={`group block p-5 rounded-2xl ${breed.color} border border-transparent hover:border-plum/20 dark:hover:border-muted-sage/20 transition-all hover:scale-105 hover:shadow-lg text-center`}
                 >
                   <span className="text-4xl block mb-3" aria-hidden="true">{breed.emoji}</span>
-                  <h3 className="font-heading font-semibold text-sm text-charcoal dark:text-dark-text">
+                  <h3 className="font-heading font-semibold text-sm text-ink dark:text-dark-text">
                     {breed.name}
                   </h3>
-                  <p className="text-xs text-charcoal/50 dark:text-dark-muted mt-1">{breed.size}</p>
-                  <p className="text-xs text-forest-green dark:text-muted-sage mt-1 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                  <p className="text-xs text-grey-500 dark:text-dark-muted mt-1">{breed.size}</p>
+                  <p className="text-xs text-plum dark:text-coral-soft mt-1 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                     {breed.personality}
                   </p>
                 </Link>
@@ -139,7 +139,7 @@ export default function HomePage() {
           <div className="text-center mt-8">
             <Link
               href="/breed-database"
-              className="inline-flex items-center gap-2 text-sm font-medium text-forest-green dark:text-muted-sage hover:underline"
+              className="inline-flex items-center gap-2 text-sm font-medium text-plum dark:text-coral-soft hover:underline"
             >
               View all 30+ breeds →
             </Link>
@@ -200,7 +200,7 @@ export default function HomePage() {
               <div className="flex gap-3">
                 <Link
                   href="/breed-database"
-                  className="px-5 py-2.5 rounded-full bg-white text-forest-green font-medium text-sm hover:bg-white/90 transition-colors"
+                  className="px-5 py-2.5 rounded-full bg-white text-plum font-medium text-sm hover:bg-white/90 transition-colors"
                 >
                   Explore these breeds
                 </Link>
@@ -224,10 +224,10 @@ export default function HomePage() {
           viewport={{ once: true }}
           variants={stagger}
         >
-          <motion.h2 variants={fadeUp} className="text-h2 font-heading font-bold text-charcoal dark:text-dark-text text-center mb-4">
+          <motion.h2 variants={fadeUp} className="text-h2 font-heading font-bold text-ink dark:text-dark-text text-center mb-4">
             Tools that actually help
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-charcoal/60 dark:text-dark-muted text-center max-w-md mx-auto mb-12">
+          <motion.p variants={fadeUp} className="text-ink-muted dark:text-dark-muted text-center max-w-md mx-auto mb-12">
             Free interactive tools designed specifically for tiny dogs. No sign-up needed.
           </motion.p>
 
@@ -243,13 +243,13 @@ export default function HomePage() {
               <motion.div key={tool.title} variants={fadeUp}>
                 <Link
                   href={tool.href}
-                  className={`group block p-6 rounded-2xl bg-white dark:bg-dark-surface border border-soft-grey/30 dark:border-dark-border border-l-4 ${tool.accent} shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1`}
+                  className={`group block p-6 rounded-2xl bg-white dark:bg-dark-surface border border-grey-200/30 dark:border-dark-border border-l-4 ${tool.accent} shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1`}
                 >
                   <span className="text-2xl block mb-3" aria-hidden="true">{tool.icon}</span>
-                  <h3 className="font-heading font-semibold text-charcoal dark:text-dark-text group-hover:text-forest-green dark:group-hover:text-muted-sage transition-colors">
+                  <h3 className="font-heading font-semibold text-ink dark:text-dark-text group-hover:text-plum dark:group-hover:text-muted-sage transition-colors">
                     {tool.title}
                   </h3>
-                  <p className="mt-2 text-sm text-charcoal/60 dark:text-dark-muted leading-relaxed">
+                  <p className="mt-2 text-sm text-ink-muted dark:text-dark-muted leading-relaxed">
                     {tool.desc}
                   </p>
                 </Link>
@@ -260,20 +260,20 @@ export default function HomePage() {
       </section>
 
       {/* Trust / Social proof */}
-      <section className="bg-warm-white dark:bg-dark-surface border-y border-soft-grey/30 dark:border-dark-border">
+      <section className="bg-white dark:bg-dark-surface border-y border-grey-200/30 dark:border-dark-border">
         <div className="container-wide py-16">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-4xl font-heading font-bold text-forest-green dark:text-muted-sage">30+</p>
-              <p className="mt-2 text-sm text-charcoal/60 dark:text-dark-muted">Tiny breeds covered</p>
+              <p className="text-4xl font-heading font-bold text-plum dark:text-coral-soft">30+</p>
+              <p className="mt-2 text-sm text-ink-muted dark:text-dark-muted">Tiny breeds covered</p>
             </div>
             <div>
-              <p className="text-4xl font-heading font-bold text-forest-green dark:text-muted-sage">100%</p>
-              <p className="mt-2 text-sm text-charcoal/60 dark:text-dark-muted">Free tools, no sign-up</p>
+              <p className="text-4xl font-heading font-bold text-plum dark:text-coral-soft">100%</p>
+              <p className="mt-2 text-sm text-ink-muted dark:text-dark-muted">Free tools, no sign-up</p>
             </div>
             <div>
-              <p className="text-4xl font-heading font-bold text-forest-green dark:text-muted-sage">0</p>
-              <p className="mt-2 text-sm text-charcoal/60 dark:text-dark-muted">Sponsored content or ads</p>
+              <p className="text-4xl font-heading font-bold text-plum dark:text-coral-soft">0</p>
+              <p className="mt-2 text-sm text-ink-muted dark:text-dark-muted">Sponsored content or ads</p>
             </div>
           </div>
         </div>
@@ -288,24 +288,24 @@ export default function HomePage() {
           variants={stagger}
         >
           <motion.span variants={fadeUp} className="text-5xl block mb-4" aria-hidden="true">💌</motion.span>
-          <motion.h2 variants={fadeUp} className="text-h2 font-heading font-bold text-charcoal dark:text-dark-text">
+          <motion.h2 variants={fadeUp} className="text-h2 font-heading font-bold text-ink dark:text-dark-text">
             Join the tiny dog community
           </motion.h2>
-          <motion.p variants={fadeUp} className="mt-3 text-charcoal/60 dark:text-dark-muted max-w-md mx-auto">
+          <motion.p variants={fadeUp} className="mt-3 text-ink-muted dark:text-dark-muted max-w-md mx-auto">
             Weekly tips, new breed guides and tool updates. No spam, just genuinely useful advice.
           </motion.p>
           <motion.div variants={fadeUp} className="mt-8 max-w-sm mx-auto flex gap-2">
             <input
               type="email"
               placeholder="your@email.com"
-              className="flex-1 px-4 py-3 rounded-full border border-soft-grey bg-white text-sm focus:outline-none focus:ring-2 focus:ring-forest-green/30 dark:bg-dark-surface dark:border-dark-border dark:text-dark-text"
+              className="flex-1 px-4 py-3 rounded-full border border-grey-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-forest-green/30 dark:bg-dark-surface dark:border-dark-border dark:text-dark-text"
               aria-label="Email for newsletter"
             />
-            <button className="px-5 py-3 rounded-full bg-forest-green text-white text-sm font-medium hover:bg-forest-green/90 transition-colors">
+            <button className="px-5 py-3 rounded-full bg-plum text-white text-sm font-medium hover:bg-plum/90 transition-colors">
               Subscribe
             </button>
           </motion.div>
-          <motion.p variants={fadeUp} className="mt-3 text-xs text-charcoal/40 dark:text-dark-muted/60">
+          <motion.p variants={fadeUp} className="mt-3 text-xs text-grey-500 dark:text-dark-subtle">
             Free forever. Unsubscribe any time.
           </motion.p>
         </motion.div>

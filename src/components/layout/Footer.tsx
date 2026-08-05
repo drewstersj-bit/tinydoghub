@@ -42,12 +42,12 @@ const FOOTER_SECTIONS = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-soft-grey/50 bg-warm-white dark:bg-dark-surface dark:border-dark-border mt-section">
+    <footer className="border-t border-grey-200 bg-white dark:bg-dark-surface dark:border-dark-border mt-20">
       <div className="container-wide py-12 lg:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {FOOTER_SECTIONS.map((section) => (
             <div key={section.title}>
-              <h3 className="font-heading font-semibold text-sm text-charcoal dark:text-dark-text mb-3">
+              <h3 className="font-heading font-semibold text-sm text-plum dark:text-dark-text mb-3">
                 {section.title}
               </h3>
               <ul className="space-y-2">
@@ -55,7 +55,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-charcoal/60 hover:text-forest-green transition-colors dark:text-dark-muted dark:hover:text-muted-sage"
+                      className="text-sm text-ink-muted hover:text-plum transition-colors dark:text-dark-muted dark:hover:text-coral-soft"
                     >
                       {link.label}
                     </Link>
@@ -66,17 +66,17 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-soft-grey/50 dark:border-dark-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-charcoal/50 dark:text-dark-muted">
+        <div className="mt-12 pt-8 border-t border-grey-200 dark:border-dark-border flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-ink-muted dark:text-dark-muted">
             © {new Date().getFullYear()} TinyDogHub. Built for tiny dog lovers across the UK.
           </p>
-          <p className="text-xs text-charcoal/40 dark:text-dark-muted/60">
+          <p className="text-xs text-grey-500 dark:text-dark-subtle">
             Trusted retailers:{' '}
-            <a href="https://mychiandme.co.uk" target="_blank" rel="noopener noreferrer" className="underline hover:text-forest-green">
+            <a href="https://mychiandme.co.uk" target="_blank" rel="noopener noreferrer" className="underline hover:text-plum dark:hover:text-coral-soft">
               My Chi and Me
             </a>
             {' · '}
-            <a href="https://mypupandme.co.uk" target="_blank" rel="noopener noreferrer" className="underline hover:text-forest-green">
+            <a href="https://mypupandme.co.uk" target="_blank" rel="noopener noreferrer" className="underline hover:text-plum dark:hover:text-coral-soft">
               My Pup and Me
             </a>
           </p>

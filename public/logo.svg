@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 48" fill="none">
+  <!-- Ears -->
+  <path d="M8 4 L18 40 L28 4 Z" fill="#3D1A35"/>
+  <path d="M24 4 L34 40 L44 4 Z" fill="#3D1A35"/>
+  <!-- Nose -->
+  <ellipse cx="26" cy="42" rx="5" ry="4" fill="#E84040"/>
+  <!-- Text -->
+  <text x="52" y="36" font-family="Manrope, sans-serif" font-size="28" font-weight="800" fill="#3D1A35" letter-spacing="-0.5">TINY DOG HUB</text>
+</svg>

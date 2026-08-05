@@ -38,7 +38,7 @@ function matchesFilter(walk: Walk, filter: FilterKey): boolean {
 
 function getRatingColour(total: number): string {
   if (total >= 85) return 'bg-fresh-green text-white';
-  if (total >= 70) return 'bg-forest-green text-white';
+  if (total >= 70) return 'bg-plum text-white';
   if (total >= 55) return 'bg-lemon text-charcoal';
   return 'bg-warm-beige text-charcoal';
 }
@@ -105,10 +105,10 @@ export default function WalksPage() {
               placeholder="Search by walk name, town or county..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-10 pr-4 py-3.5 rounded-full bg-white/95 text-charcoal text-sm placeholder:text-charcoal/50 focus:outline-none focus:ring-2 focus:ring-white/50 shadow-lg"
+              className="w-full pl-10 pr-4 py-3.5 rounded-full bg-white/95 text-ink text-sm placeholder:text-grey-500 focus:outline-none focus:ring-2 focus:ring-white/50 shadow-lg"
               aria-label="Search walks"
             />
-            <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-charcoal/40" aria-hidden="true">🔍</span>
+            <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-grey-500" aria-hidden="true">🔍</span>
           </div>
         </div>
 
@@ -121,8 +121,8 @@ export default function WalksPage() {
                 onClick={() => toggleFilter(f.key)}
                 className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeFilters.includes(f.key)
-                    ? 'bg-forest-green text-white shadow-md'
-                    : 'bg-white text-charcoal/70 border border-soft-grey hover:border-forest-green/30 hover:text-forest-green dark:bg-dark-surface dark:text-dark-muted dark:border-dark-border'
+                    ? 'bg-plum text-white shadow-md'
+                    : 'bg-white text-ink-muted border border-grey-200 hover:border-plum/30 hover:text-plum dark:bg-dark-surface dark:text-dark-muted dark:border-dark-border'
                 }`}
                 aria-pressed={activeFilters.includes(f.key)}
               >
@@ -143,13 +143,13 @@ export default function WalksPage() {
 
         {/* Sort + count */}
         <div className="flex items-center justify-between mb-6">
-          <p className="text-sm text-charcoal/60 dark:text-dark-muted" aria-live="polite">
+          <p className="text-sm text-ink-muted dark:text-dark-muted" aria-live="polite">
             {filteredWalks.length} walk{filteredWalks.length !== 1 ? 's' : ''} found
           </p>
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value as typeof sort)}
-            className="text-sm px-3 py-2 rounded-lg border border-soft-grey bg-white dark:bg-dark-surface dark:border-dark-border dark:text-dark-text"
+            className="text-sm px-3 py-2 rounded-lg border border-grey-200 bg-white dark:bg-dark-surface dark:border-dark-border dark:text-dark-text"
             aria-label="Sort walks"
           >
             <option value="recommended">Recommended</option>
@@ -172,7 +172,7 @@ export default function WalksPage() {
               >
                 <Link
                   href={`/walks/${walk.slug}`}
-                  className="group block bg-white dark:bg-dark-surface rounded-2xl border border-soft-grey/30 dark:border-dark-border overflow-hidden shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1"
+                  className="group block bg-white dark:bg-dark-surface rounded-2xl border border-grey-200/30 dark:border-dark-border overflow-hidden shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1"
                 >
                   {/* Top colour bar */}
                   <div className="h-2 bg-gradient-to-r from-forest-green to-muted-sage" />
@@ -183,28 +183,28 @@ export default function WalksPage() {
                       <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${getRatingColour(walk.rating.total)}`}>
                         {walk.rating.total}/100
                       </span>
-                      <span className="text-xs text-charcoal/50 dark:text-dark-muted capitalize">
+                      <span className="text-xs text-grey-500 dark:text-dark-muted capitalize">
                         {walk.difficulty}
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-heading font-bold text-lg text-charcoal dark:text-dark-text group-hover:text-forest-green dark:group-hover:text-muted-sage transition-colors leading-tight">
+                    <h3 className="font-heading font-bold text-lg text-ink dark:text-dark-text group-hover:text-plum dark:group-hover:text-muted-sage transition-colors leading-tight">
                       {walk.title}
                     </h3>
 
                     {/* Location */}
-                    <p className="mt-1 text-sm text-charcoal/60 dark:text-dark-muted">
+                    <p className="mt-1 text-sm text-ink-muted dark:text-dark-muted">
                       {walk.nearestTown}, {walk.county}
                     </p>
 
                     {/* Strapline */}
-                    <p className="mt-2 text-sm text-charcoal/70 dark:text-dark-muted italic">
+                    <p className="mt-2 text-sm text-ink-muted dark:text-dark-muted italic">
                       &ldquo;{walk.strapline}&rdquo;
                     </p>
 
                     {/* Stats row */}
-                    <div className="mt-4 flex items-center gap-4 text-xs text-charcoal/60 dark:text-dark-muted">
+                    <div className="mt-4 flex items-center gap-4 text-xs text-ink-muted dark:text-dark-muted">
                       <span>📏 {walk.distanceMiles} mi</span>
                       <span>⏱️ {walk.durationMinutes} min</span>
                       <span className="capitalize">🏔️ {walk.gradient.replace('-', ' ')}</span>
@@ -216,13 +216,13 @@ export default function WalksPage() {
                         <span className="px-2 py-0.5 rounded-full text-xs bg-fresh-green/10 text-fresh-green font-medium">Puppy friendly</span>
                       )}
                       {walk.cafes.some((c) => c.dogFriendly) && (
-                        <span className="px-2 py-0.5 rounded-full text-xs bg-lemon/30 text-charcoal font-medium">Café stop</span>
+                        <span className="px-2 py-0.5 rounded-full text-xs bg-lemon/30 text-ink font-medium">Café stop</span>
                       )}
                       {walk.offLead === 'generally-suitable' && (
-                        <span className="px-2 py-0.5 rounded-full text-xs bg-sky/20 text-charcoal font-medium">Off-lead</span>
+                        <span className="px-2 py-0.5 rounded-full text-xs bg-sky/20 text-ink font-medium">Off-lead</span>
                       )}
                       {walk.environments.includes('beach') && (
-                        <span className="px-2 py-0.5 rounded-full text-xs bg-sky/20 text-charcoal font-medium">Beach</span>
+                        <span className="px-2 py-0.5 rounded-full text-xs bg-sky/20 text-ink font-medium">Beach</span>
                       )}
                       {walk.environments.includes('woodland') && (
                         <span className="px-2 py-0.5 rounded-full text-xs bg-fresh-green/10 text-fresh-green font-medium">Woodland</span>
@@ -238,14 +238,14 @@ export default function WalksPage() {
         {filteredWalks.length === 0 && (
           <div className="text-center py-16">
             <span className="text-5xl block mb-4" aria-hidden="true">🗺️</span>
-            <p className="text-lg font-heading font-semibold text-charcoal dark:text-dark-text mb-2">No walks match your filters</p>
-            <p className="text-sm text-charcoal/60 dark:text-dark-muted">Try removing a filter or searching a different area.</p>
+            <p className="text-lg font-heading font-semibold text-ink dark:text-dark-text mb-2">No walks match your filters</p>
+            <p className="text-sm text-ink-muted dark:text-dark-muted">Try removing a filter or searching a different area.</p>
           </div>
         )}
 
         {/* Safety note */}
         <div className="mt-16 p-5 rounded-xl bg-warm-beige/20 dark:bg-dark-border/20 border border-warm-beige/40 dark:border-dark-border">
-          <p className="text-sm text-charcoal/70 dark:text-dark-muted leading-relaxed">
+          <p className="text-sm text-ink-muted dark:text-dark-muted leading-relaxed">
             <strong>Safety note:</strong> Route conditions, access rules, livestock and facilities can change.
             Owners remain responsible for checking current conditions, weather and local signage before walking.
             The Tiny Dog Rating is an editorial suitability score — it does not guarantee safety.

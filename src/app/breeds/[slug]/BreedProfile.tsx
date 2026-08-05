@@ -46,18 +46,18 @@ const BREED_DATA = {
 function RatingBar({ value, max = 5, label }: { value: number; max?: number; label: string }) {
   return (
     <div className="flex items-center gap-3">
-      <span className="text-sm text-charcoal/70 dark:text-dark-muted w-36 shrink-0">{label}</span>
+      <span className="text-sm text-ink-muted dark:text-dark-muted w-36 shrink-0">{label}</span>
       <div className="flex-1 flex gap-1">
         {Array.from({ length: max }).map((_, i) => (
           <div
             key={i}
             className={`h-2.5 flex-1 rounded-full ${
-              i < value ? 'bg-forest-green dark:bg-muted-sage' : 'bg-soft-grey/50 dark:bg-dark-border/50'
+              i < value ? 'bg-plum dark:bg-muted-sage' : 'bg-grey-100/50 dark:bg-dark-border/50'
             }`}
           />
         ))}
       </div>
-      <span className="text-sm font-medium text-charcoal dark:text-dark-text w-8 text-right">{value}/{max}</span>
+      <span className="text-sm font-medium text-ink dark:text-dark-text w-8 text-right">{value}/{max}</span>
     </div>
   );
 }
@@ -77,24 +77,24 @@ export function BreedProfile({ slug }: { slug: string }) {
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-5xl" aria-hidden="true">{breed.emoji}</span>
-              <span className="px-3 py-1 rounded-full bg-forest-green/10 text-forest-green dark:bg-muted-sage/20 dark:text-muted-sage text-sm font-medium">
+              <span className="px-3 py-1 rounded-full bg-plum/10 text-plum dark:bg-muted-sage/20 dark:text-coral-soft text-sm font-medium">
                 {breed.group} Group
               </span>
             </div>
-            <h1 className="text-4xl lg:text-5xl font-heading font-bold text-charcoal dark:text-dark-text">
+            <h1 className="text-4xl lg:text-5xl font-heading font-bold text-ink dark:text-dark-text">
               {breed.name}
             </h1>
-            <p className="mt-3 text-xl text-charcoal/70 dark:text-dark-muted">{breed.tagline}</p>
+            <p className="mt-3 text-xl text-ink-muted dark:text-dark-muted">{breed.tagline}</p>
             <div className="mt-6 flex flex-wrap gap-2">
               {breed.temperament.map((trait) => (
-                <span key={trait} className="px-3 py-1.5 rounded-full bg-warm-beige/30 dark:bg-dark-border/30 text-sm font-medium text-charcoal/80 dark:text-dark-muted">
+                <span key={trait} className="px-3 py-1.5 rounded-full bg-warm-beige/30 dark:bg-dark-border/30 text-sm font-medium text-ink-light dark:text-dark-muted">
                   {trait}
                 </span>
               ))}
             </div>
           </div>
-          <div className="w-full lg:w-80 bg-white dark:bg-dark-surface rounded-2xl border border-soft-grey/30 dark:border-dark-border p-6 shadow-card">
-            <h2 className="font-heading font-semibold text-sm text-charcoal/50 dark:text-dark-muted uppercase tracking-wide mb-4">Quick Facts</h2>
+          <div className="w-full lg:w-80 bg-white dark:bg-dark-surface rounded-2xl border border-grey-200/30 dark:border-dark-border p-6 shadow-card">
+            <h2 className="font-heading font-semibold text-sm text-grey-500 dark:text-dark-muted uppercase tracking-wide mb-4">Quick Facts</h2>
             <dl className="space-y-3">
               {[
                 { label: 'Origin', value: breed.origin },
@@ -106,13 +106,13 @@ export function BreedProfile({ slug }: { slug: string }) {
                 { label: 'Exercise', value: breed.exercise },
               ].map((item) => (
                 <div key={item.label} className="flex justify-between">
-                  <dt className="text-sm text-charcoal/60 dark:text-dark-muted">{item.label}</dt>
-                  <dd className="text-sm font-medium text-charcoal dark:text-dark-text">{item.value}</dd>
+                  <dt className="text-sm text-ink-muted dark:text-dark-muted">{item.label}</dt>
+                  <dd className="text-sm font-medium text-ink dark:text-dark-text">{item.value}</dd>
                 </div>
               ))}
             </dl>
-            <div className="mt-6 pt-4 border-t border-soft-grey/30 dark:border-dark-border">
-              <Link href="/tools/harness-finder" className="block w-full text-center px-4 py-2.5 rounded-full bg-forest-green text-white text-sm font-medium hover:bg-forest-green/90 transition-colors">
+            <div className="mt-6 pt-4 border-t border-grey-200/30 dark:border-dark-border">
+              <Link href="/tools/harness-finder" className="block w-full text-center px-4 py-2.5 rounded-full bg-plum text-white text-sm font-medium hover:bg-plum/90 transition-colors">
                 🎯 Find their harness size
               </Link>
             </div>
@@ -120,8 +120,8 @@ export function BreedProfile({ slug }: { slug: string }) {
         </motion.div>
 
         <section className="mb-16">
-          <h2 className="text-h3 font-heading font-bold text-charcoal dark:text-dark-text mb-6">Breed Ratings</h2>
-          <div className="bg-white dark:bg-dark-surface rounded-2xl border border-soft-grey/30 dark:border-dark-border p-6 space-y-4">
+          <h2 className="text-h3 font-heading font-bold text-ink dark:text-dark-text mb-6">Breed Ratings</h2>
+          <div className="bg-white dark:bg-dark-surface rounded-2xl border border-grey-200/30 dark:border-dark-border p-6 space-y-4">
             <RatingBar value={breed.ratings.apartmentFriendly} label="Apartment Friendly" />
             <RatingBar value={breed.ratings.goodWithKids} label="Good with Kids" />
             <RatingBar value={breed.ratings.easyToGroom} label="Easy to Groom" />
@@ -134,12 +134,12 @@ export function BreedProfile({ slug }: { slug: string }) {
 
         <section className="mb-16 grid md:grid-cols-2 gap-6">
           <div className="bg-emerald-50/50 dark:bg-emerald-950/10 rounded-2xl p-6 border border-emerald-100/50 dark:border-emerald-900/20">
-            <h3 className="font-heading font-semibold text-charcoal dark:text-dark-text mb-4 flex items-center gap-2">
+            <h3 className="font-heading font-semibold text-ink dark:text-dark-text mb-4 flex items-center gap-2">
               <span aria-hidden="true">✅</span> Great for
             </h3>
             <ul className="space-y-2">
               {breed.goodFor.map((item) => (
-                <li key={item} className="text-sm text-charcoal/70 dark:text-dark-muted flex items-center gap-2">
+                <li key={item} className="text-sm text-ink-muted dark:text-dark-muted flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
                   {item}
                 </li>
@@ -147,12 +147,12 @@ export function BreedProfile({ slug }: { slug: string }) {
             </ul>
           </div>
           <div className="bg-amber-50/50 dark:bg-amber-950/10 rounded-2xl p-6 border border-amber-100/50 dark:border-amber-900/20">
-            <h3 className="font-heading font-semibold text-charcoal dark:text-dark-text mb-4 flex items-center gap-2">
+            <h3 className="font-heading font-semibold text-ink dark:text-dark-text mb-4 flex items-center gap-2">
               <span aria-hidden="true">⚠️</span> Consider carefully
             </h3>
             <ul className="space-y-2">
               {breed.notIdealFor.map((item) => (
-                <li key={item} className="text-sm text-charcoal/70 dark:text-dark-muted flex items-center gap-2">
+                <li key={item} className="text-sm text-ink-muted dark:text-dark-muted flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true" />
                   {item}
                 </li>
@@ -162,55 +162,55 @@ export function BreedProfile({ slug }: { slug: string }) {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-h3 font-heading font-bold text-charcoal dark:text-dark-text mb-6">Health Considerations</h2>
+          <h2 className="text-h3 font-heading font-bold text-ink dark:text-dark-text mb-6">Health Considerations</h2>
           <div className="space-y-3">
             {breed.healthConcerns.map((concern) => (
-              <details key={concern.name} className="group bg-white dark:bg-dark-surface rounded-xl border border-soft-grey/30 dark:border-dark-border overflow-hidden">
-                <summary className="flex items-center justify-between p-4 cursor-pointer hover:bg-soft-grey/10 dark:hover:bg-dark-border/20 transition-colors">
+              <details key={concern.name} className="group bg-white dark:bg-dark-surface rounded-xl border border-grey-200/30 dark:border-dark-border overflow-hidden">
+                <summary className="flex items-center justify-between p-4 cursor-pointer hover:bg-grey-100/10 dark:hover:bg-dark-border/20 transition-colors">
                   <div className="flex items-center gap-3">
-                    <span className="text-sm font-medium text-charcoal dark:text-dark-text">{concern.name}</span>
+                    <span className="text-sm font-medium text-ink dark:text-dark-text">{concern.name}</span>
                     <span className="px-2 py-0.5 rounded-full text-xs bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-200">{concern.severity}</span>
                   </div>
                   <span className="text-charcoal/30 group-open:rotate-180 transition-transform" aria-hidden="true">▼</span>
                 </summary>
-                <div className="px-4 pb-4 text-sm text-charcoal/70 dark:text-dark-muted">{concern.description}</div>
+                <div className="px-4 pb-4 text-sm text-ink-muted dark:text-dark-muted">{concern.description}</div>
               </details>
             ))}
           </div>
         </section>
 
         <section className="mb-16">
-          <h2 className="text-h3 font-heading font-bold text-charcoal dark:text-dark-text mb-6 flex items-center gap-2">
+          <h2 className="text-h3 font-heading font-bold text-ink dark:text-dark-text mb-6 flex items-center gap-2">
             <span aria-hidden="true">💡</span> Fun Facts
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {breed.funFacts.map((fact, i) => (
-              <div key={i} className="p-4 rounded-xl bg-gradient-to-br from-warm-beige/20 to-cream dark:from-dark-border/20 dark:to-dark-surface border border-soft-grey/20 dark:border-dark-border/30">
-                <p className="text-sm text-charcoal/80 dark:text-dark-muted leading-relaxed">{fact}</p>
+              <div key={i} className="p-4 rounded-xl bg-gradient-to-br from-warm-beige/20 to-cream dark:from-dark-border/20 dark:to-dark-surface border border-grey-200/20 dark:border-dark-border/30">
+                <p className="text-sm text-ink-light dark:text-dark-muted leading-relaxed">{fact}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="mb-16 p-6 rounded-2xl bg-white dark:bg-dark-surface border border-soft-grey/30 dark:border-dark-border">
-          <p className="text-xs text-charcoal/40 dark:text-dark-muted uppercase tracking-wide font-medium mb-3">Editor&apos;s Recommendation</p>
-          <h3 className="font-heading font-semibold text-charcoal dark:text-dark-text mb-2">Harnesses for {breed.name}s</h3>
-          <p className="text-sm text-charcoal/60 dark:text-dark-muted mb-4">
+        <section className="mb-16 p-6 rounded-2xl bg-white dark:bg-dark-surface border border-grey-200/30 dark:border-dark-border">
+          <p className="text-xs text-grey-500 dark:text-dark-muted uppercase tracking-wide font-medium mb-3">Editor&apos;s Recommendation</p>
+          <h3 className="font-heading font-semibold text-ink dark:text-dark-text mb-2">Harnesses for {breed.name}s</h3>
+          <p className="text-sm text-ink-muted dark:text-dark-muted mb-4">
             Due to their delicate trachea, we always recommend a step-in harness rather than a collar. A properly fitted harness distributes pressure away from the throat.
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="https://mychiandme.co.uk/collections/leads-and-harnesses" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-forest-green/20 text-sm font-medium text-forest-green hover:bg-forest-green/5 transition-colors dark:border-muted-sage/30 dark:text-muted-sage">
+            <a href="https://mychiandme.co.uk/collections/leads-and-harnesses" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-plum/20 text-sm font-medium text-plum hover:bg-plum/5 transition-colors dark:border-muted-sage/30 dark:text-coral-soft">
               Browse at My Chi and Me →
             </a>
-            <a href="https://mypupandme.co.uk/collection" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-forest-green/20 text-sm font-medium text-forest-green hover:bg-forest-green/5 transition-colors dark:border-muted-sage/30 dark:text-muted-sage">
+            <a href="https://mypupandme.co.uk/collection" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-plum/20 text-sm font-medium text-plum hover:bg-plum/5 transition-colors dark:border-muted-sage/30 dark:text-coral-soft">
               Browse at My Pup and Me →
             </a>
           </div>
         </section>
 
-        <div className="flex justify-between items-center pt-8 border-t border-soft-grey/30 dark:border-dark-border">
-          <Link href="/breed-database" className="text-sm font-medium text-forest-green dark:text-muted-sage hover:underline">← Back to all breeds</Link>
-          <Link href="/tools/harness-finder" className="text-sm font-medium text-forest-green dark:text-muted-sage hover:underline">Harness Finder →</Link>
+        <div className="flex justify-between items-center pt-8 border-t border-grey-200/30 dark:border-dark-border">
+          <Link href="/breed-database" className="text-sm font-medium text-plum dark:text-coral-soft hover:underline">← Back to all breeds</Link>
+          <Link href="/tools/harness-finder" className="text-sm font-medium text-plum dark:text-coral-soft hover:underline">Harness Finder →</Link>
         </div>
       </div>
     </>

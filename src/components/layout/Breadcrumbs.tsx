@@ -40,20 +40,20 @@ export function Breadcrumbs() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <nav aria-label="Breadcrumb" className="container-wide py-3">
-        <ol className="flex items-center gap-1.5 text-sm text-charcoal/60 dark:text-dark-muted">
+        <ol className="flex items-center gap-1.5 text-sm text-ink-muted dark:text-dark-muted">
           {items.map((item, i) => (
             <li key={item.href} className="flex items-center gap-1.5">
               {i > 0 && (
-                <span aria-hidden="true" className="text-charcoal/30 dark:text-dark-muted/40">
+                <span aria-hidden="true" className="text-grey-300 dark:text-dark-muted/40">
                   /
                 </span>
               )}
               {i === items.length - 1 ? (
-                <span aria-current="page" className="text-charcoal dark:text-dark-text font-medium truncate max-w-[200px]">
+                <span aria-current="page" className="text-ink dark:text-dark-text font-medium truncate max-w-[200px]">
                   {item.label}
                 </span>
               ) : (
-                <Link href={item.href} className="hover:text-forest-green dark:hover:text-muted-sage transition-colors">
+                <Link href={item.href} className="hover:text-plum dark:hover:text-coral-soft transition-colors">
                   {item.label}
                 </Link>
               )}
