@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Chihuahua Care Sheet",
+    "description": "One-page reference covering feeding, exercise, grooming and health checks.",
+    "filename": "chihuahua-care-sheet.pdf",
+    "category": "care-sheets"
+  },
+  {
+    "title": "Puppy Growth Chart Template",
+    "description": "Printable chart to track your puppy's weight week by week.",
+    "filename": "puppy-growth-chart.pdf",
+    "category": "charts"
+  },
+  {
+    "title": "Harness Measuring Guide",
+    "description": "Visual guide showing exactly how to measure chest, neck and back length.",
+    "filename": "harness-measuring-guide.pdf",
+    "category": "guides"
+  }
+]

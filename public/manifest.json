@@ -1,0 +1,21 @@
+{
+  "name": "TinyDogHub",
+  "short_name": "TinyDogHub",
+  "description": "The UK's definitive resource for tiny dog owners",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF8F0",
+  "theme_color": "#2D5016",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+[
+  {
+    "title": "Home",
+    "section": "main",
+    "path": "/",
+    "excerpt": "The UK home for tiny dogs. Expert guides, tools and trusted recommendations for Chihuahua, toy breed and puppy owners.",
+    "keywords": [
+      "tiny dogs",
+      "chihuahua",
+      "toy breeds",
+      "puppies",
+      "small dogs"
+    ]
+  },
+  {
+    "title": "Breed Database",
+    "section": "breeds",
+    "path": "/breed-database",
+    "excerpt": "Search and filter the complete tiny dog breed database. Compare sizes, temperaments and care requirements.",
+    "keywords": [
+      "breeds",
+      "database",
+      "toy breeds",
+      "miniature",
+      "small dogs"
+    ]
+  },
+  {
+    "title": "Size Database",
+    "section": "breeds",
+    "path": "/size-database",
+    "excerpt": "Average measurements for every tiny dog breed at every age. Weight, height, chest and neck data.",
+    "keywords": [
+      "size",
+      "measurements",
+      "weight",
+      "height",
+      "chest",
+      "neck"
+    ]
+  },
+  {
+    "title": "Harness Finder",
+    "section": "tools",
+    "path": "/tools/harness-finder",
+    "excerpt": "Enter your dog's measurements for a personalised harness size recommendation. Step-in, mesh and no-pull options.",
+    "keywords": [
+      "harness",
+      "size",
+      "calculator",
+      "measurements",
+      "fitting"
+    ]
+  },
+  {
+    "title": "Puppy Growth Tracker",
+    "section": "tools",
+    "path": "/tools/puppy-growth-tracker",
+    "excerpt": "Track your puppy's weight over time and compare against expected breed growth curves.",
+    "keywords": [
+      "puppy",
+      "growth",
+      "weight",
+      "tracker",
+      "development"
+    ]
+  },
+  {
+    "title": "Health Guides",
+    "section": "health",
+    "path": "/health",
+    "excerpt": "Evidence-based health information for tiny dog owners. Common conditions, preventive care and vet advice.",
+    "keywords": [
+      "health",
+      "vet",
+      "conditions",
+      "care",
+      "prevention"
+    ]
+  },
+  {
+    "title": "Training Guides",
+    "section": "training",
+    "path": "/training",
+    "excerpt": "Positive training methods for tiny dogs. Socialisation, recall, lead walking and behaviour.",
+    "keywords": [
+      "training",
+      "behaviour",
+      "socialisation",
+      "recall",
+      "commands"
+    ]
+  },
+  {
+    "title": "Nutrition Guides",
+    "section": "nutrition",
+    "path": "/nutrition",
+    "excerpt": "Feeding guidance for tiny dogs. Portions, meal schedules, food choices and dietary needs.",
+    "keywords": [
+      "nutrition",
+      "feeding",
+      "food",
+      "diet",
+      "portions"
+    ]
+  },
+  {
+    "title": "Dog Walks",
+    "section": "walks",
+    "path": "/walks",
+    "excerpt": "Small-dog-friendly walking routes across the UK with maps, difficulty ratings and tips.",
+    "keywords": [
+      "walks",
+      "routes",
+      "maps",
+      "outdoors",
+      "exercise"
+    ]
+  },
+  {
+    "title": "Dog Friendly Cafes",
+    "section": "places",
+    "path": "/dog-friendly/cafes",
+    "excerpt": "Cafes, restaurants and pubs that welcome small dogs. Curated reviews and practical info.",
+    "keywords": [
+      "cafes",
+      "restaurants",
+      "pubs",
+      "dog friendly",
+      "eat out"
+    ]
+  },
+  {
+    "title": "Dog Friendly Hotels",
+    "section": "places",
+    "path": "/dog-friendly/hotels",
+    "excerpt": "Hotels and accommodation that welcome tiny dogs. No hidden fees or hostile policies.",
+    "keywords": [
+      "hotels",
+      "accommodation",
+      "stay",
+      "dog friendly",
+      "travel"
+    ]
+  },
+  {
+    "title": "Dog Friendly Holidays",
+    "section": "places",
+    "path": "/dog-friendly/holidays",
+    "excerpt": "Cottages, caravan parks and holiday destinations that welcome tiny dogs.",
+    "keywords": [
+      "holidays",
+      "cottages",
+      "caravans",
+      "getaway",
+      "travel"
+    ]
+  },
+  {
+    "title": "Dog Name Database",
+    "section": "tools",
+    "path": "/dog-names",
+    "excerpt": "Thousands of names for tiny dogs. Filter by gender, origin, meaning and popularity.",
+    "keywords": [
+      "names",
+      "naming",
+      "puppy names",
+      "dog names"
+    ]
+  },
+  {
+    "title": "Calculators",
+    "section": "tools",
+    "path": "/calculators",
+    "excerpt": "Quick calculations for feeding, weight, age and more. Tailored for small dogs.",
+    "keywords": [
+      "calculators",
+      "food calculator",
+      "age calculator",
+      "weight"
+    ]
+  },
+  {
+    "title": "Checklists",
+    "section": "resources",
+    "path": "/checklists",
+    "excerpt": "Printable checklists for new puppy owners, travel prep, grooming and seasonal care.",
+    "keywords": [
+      "checklists",
+      "new puppy",
+      "travel",
+      "grooming"
+    ]
+  },
+  {
+    "title": "Downloads",
+    "section": "resources",
+    "path": "/downloads",
+    "excerpt": "Free downloadable resources. Care sheets, growth charts, measurement guides.",
+    "keywords": [
+      "downloads",
+      "free",
+      "printable",
+      "care sheets",
+      "guides"
+    ]
+  },
+  {
+    "title": "About TinyDogHub",
+    "section": "main",
+    "path": "/about",
+    "excerpt": "Our mission is to be the most trusted resource in the UK for tiny dog owners.",
+    "keywords": [
+      "about",
+      "mission",
+      "editorial",
+      "standards"
+    ]
+  },
+  {
+    "title": "Contact",
+    "section": "main",
+    "path": "/contact",
+    "excerpt": "Get in touch with the TinyDogHub team for feedback, corrections or partnerships.",
+    "keywords": [
+      "contact",
+      "feedback",
+      "enquiry"
+    ]
+  }
+]

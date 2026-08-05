@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FFF8F0;
+  --color-warm-white: #FDFBF7;
+  --color-soft-grey: #E8E4DF;
+  --color-charcoal: #2D2D2D;
+  --color-forest-green: #2D5016;
+  --color-muted-sage: #7A9B6D;
+  --color-warm-beige: #D4C5B2;
+  --color-deep-coral: #E8614D;
+  --color-dark-bg: #1A1A1A;
+  --color-dark-surface: #252525;
+  --color-dark-border: #3A3A3A;
+  --color-dark-text: #E8E4DF;
+  --color-dark-muted: #9A9590;
+
+  --font-heading: var(--font-manrope), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+
+  --radius-card: 0.75rem;
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+  --spacing-section: 6rem;
+  --spacing-section-sm: 4rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .dark body,
+  .dark {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@utility container-narrow {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 56rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@utility container-wide {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-narrow, .container-wide {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-narrow, .container-wide {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

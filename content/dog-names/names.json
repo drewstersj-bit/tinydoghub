@@ -1,0 +1,12 @@
+[
+  { "name": "Bella", "gender": "female", "origin": "Italian", "meaning": "Beautiful", "popularity": 9, "tags": ["classic", "popular"] },
+  { "name": "Coco", "gender": "female", "origin": "French", "meaning": "Chocolate", "popularity": 8, "tags": ["cute", "food-inspired"] },
+  { "name": "Milo", "gender": "male", "origin": "German", "meaning": "Beloved", "popularity": 8, "tags": ["classic", "popular"] },
+  { "name": "Pixie", "gender": "female", "origin": "English", "meaning": "Fairy", "popularity": 7, "tags": ["cute", "tiny"] },
+  { "name": "Teddy", "gender": "male", "origin": "English", "meaning": "Bear", "popularity": 9, "tags": ["cute", "popular"] },
+  { "name": "Luna", "gender": "female", "origin": "Latin", "meaning": "Moon", "popularity": 9, "tags": ["celestial", "popular"] },
+  { "name": "Gizmo", "gender": "male", "origin": "English", "meaning": "Gadget", "popularity": 6, "tags": ["quirky", "fun"] },
+  { "name": "Daisy", "gender": "female", "origin": "English", "meaning": "Day's eye", "popularity": 8, "tags": ["nature", "classic"] },
+  { "name": "Biscuit", "gender": "unisex", "origin": "English", "meaning": "Twice cooked", "popularity": 6, "tags": ["food-inspired", "cute"] },
+  { "name": "Pepper", "gender": "unisex", "origin": "English", "meaning": "Spice", "popularity": 7, "tags": ["food-inspired", "feisty"] }
+]
