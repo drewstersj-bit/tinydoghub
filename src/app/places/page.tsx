@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { getPublishedVenues, getWelcomeLabelText, getWelcomeLabelStyle, type Venue, type TriState } from '@/lib/places-data';
+import { fetchVenues } from '@/lib/db';
 
 type FilterKey = 'dogsInside' | 'rainyDay' | 'quiet' | 'puppyFriendly' | 'enclosed' | 'walkNearby' | 'cafe' | 'pub' | 'restaurant';
 
@@ -43,9 +44,13 @@ function venueTypeLabel(type: string): string {
 }
 
 export default function PlacesPage() {
-  const allVenues = useMemo(() => getPublishedVenues(), []);
+  const [allVenues, setAllVenues] = useState<Venue[]>(() => getPublishedVenues());
   const [search, setSearch] = useState('');
   const [activeFilters, setActiveFilters] = useState<FilterKey[]>([]);
+
+  useEffect(() => {
+    fetchVenues().then(setAllVenues);
+  }, []);
   const [sort, setSort] = useState<'recommended' | 'rating' | 'verified'>('recommended');
 
   const toggleFilter = (key: FilterKey) => {

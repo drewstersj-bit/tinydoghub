@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { getPublishedWalks, type Walk } from '@/lib/walks-data';
+import { fetchWalks } from '@/lib/db';
 
 type FilterKey = 'puppyFriendly' | 'buggyFriendly' | 'flat' | 'quiet' | 'noStiles' | 'beach' | 'woodland' | 'cafeStop' | 'short' | 'winterOk';
 
@@ -45,9 +46,13 @@ function getRatingColour(total: number): string {
 }
 
 export default function WalksPage() {
-  const allWalks = useMemo(() => getPublishedWalks(), []);
+  const [allWalks, setAllWalks] = useState<Walk[]>(() => getPublishedWalks());
   const [search, setSearch] = useState('');
   const [activeFilters, setActiveFilters] = useState<FilterKey[]>([]);
+
+  useEffect(() => {
+    fetchWalks().then(setAllWalks);
+  }, []);
   const [sort, setSort] = useState<'recommended' | 'shortest' | 'easiest'>('recommended');
 
   const toggleFilter = (key: FilterKey) => {
