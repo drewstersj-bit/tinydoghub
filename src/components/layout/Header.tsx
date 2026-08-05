@@ -20,10 +20,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-grey-200 bg-white/90 backdrop-blur-md dark:bg-dark-surface/90 dark:border-dark-border">
-      <div className="container-wide flex items-center justify-between h-16">
+      <div className="container-wide flex items-center justify-between h-24">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/icons/tiny-dog-hub-logo.png" alt="Tiny Dog Hub" width={240} height={52} priority className="h-11 w-auto" />
+          <Image src="/icons/tiny-dog-hub-logo.png" alt="Tiny Dog Hub" width={320} height={70} priority className="h-[88px] w-auto" />
         </Link>
 
         {/* Desktop nav */}
