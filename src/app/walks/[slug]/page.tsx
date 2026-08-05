@@ -5,6 +5,7 @@ export function generateStaticParams() {
   return getPublishedWalks().map((w) => ({ slug: w.slug }));
 }
 
-export default function WalkPage({ params }: { params: { slug: string } }) {
-  return <WalkDetail slug={params.slug} />;
+export default async function WalkPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  return <WalkDetail slug={slug} />;
 }

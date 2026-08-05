@@ -6,6 +6,7 @@ export function generateStaticParams() {
   return BREED_SLUGS.map((slug) => ({ slug }));
 }
 
-export default function BreedPage() {
-  return <BreedProfile />;
+export default async function BreedPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  return <BreedProfile slug={slug} />;
 }

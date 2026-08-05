@@ -66,6 +66,41 @@ export function WalkDetail({ slug }: { slug: string }) {
           </p>
         </motion.div>
 
+        {/* Google Maps embed + link */}
+        <section className="mb-12">
+          <div className="rounded-2xl overflow-hidden border border-soft-grey/30 dark:border-dark-border shadow-card">
+            <iframe
+              title={`Map showing ${walk.title} starting point`}
+              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${walk.start.latitude},${walk.start.longitude}&zoom=14&maptype=terrain`}
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+            />
+          </div>
+          <div className="mt-3 flex flex-wrap gap-3">
+            <a
+              href={`https://www.google.com/maps/dir/?api=1&destination=${walk.start.latitude},${walk.start.longitude}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-forest-green text-white text-sm font-medium hover:bg-forest-green/90 transition-colors shadow-md"
+            >
+              📍 Get Directions in Google Maps
+            </a>
+            <a
+              href={`https://www.google.com/maps/@${walk.start.latitude},${walk.start.longitude},15z`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-soft-grey text-sm font-medium text-charcoal hover:border-forest-green hover:text-forest-green transition-colors dark:border-dark-border dark:text-dark-text dark:hover:border-muted-sage dark:hover:text-muted-sage"
+            >
+              🗺️ View on Google Maps
+            </a>
+          </div>
+        </section>
+
         {/* At-a-glance stats */}
         <section className="mb-12">
           <h2 className="text-h3 font-heading font-bold text-charcoal dark:text-dark-text mb-4">At a Glance</h2>

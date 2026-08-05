@@ -62,7 +62,7 @@ function RatingBar({ value, max = 5, label }: { value: number; max?: number; lab
   );
 }
 
-export function BreedProfile() {
+export function BreedProfile({ slug }: { slug: string }) {
   const breed = BREED_DATA;
 
   return (
