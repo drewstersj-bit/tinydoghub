@@ -11,8 +11,8 @@ const NAV_ITEMS = [
   { label: 'Health', href: '/health' },
   { label: 'Walks', href: '/walks' },
   { label: 'Dog-Friendly Places', href: '/places' },
+  { label: 'Find a Vet', href: '/vets' },
   { label: 'Tools', href: '/tools' },
-  { label: 'About', href: '/about' },
 ];
 
 export function Header() {
