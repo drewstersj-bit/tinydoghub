@@ -165,16 +165,13 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Quick Breed Finder — interactive mini-quiz */}
-      <section className="bg-gradient-to-br from-forest-green to-forest-green/90 dark:from-forest-green/80 dark:to-forest-green/60 rounded-3xl mx-4 lg:mx-auto lg:max-w-5xl overflow-hidden">
-        <div className="p-8 lg:p-12">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl" aria-hidden="true">🐾</span>
-            <h2 className="text-h3 font-heading font-bold text-white">
-              Quick Breed Finder
-            </h2>
-          </div>
-          <p className="text-white/70 mb-8 max-w-md">
+      {/* Quick Breed Finder — compact */}
+      <section className="bg-plum rounded-2xl mx-4 lg:mx-auto lg:max-w-4xl overflow-hidden">
+        <div className="p-6 lg:p-8">
+          <h2 className="font-heading font-bold text-lg text-white mb-2">
+            🐾 Quick Breed Finder
+          </h2>
+          <p className="text-white text-sm mb-4">
             Answer 3 quick questions and we&apos;ll suggest breeds that match your lifestyle.
           </p>
 
@@ -198,7 +195,7 @@ export default function HomePage() {
                   <button
                     key={option}
                     onClick={() => handleFinderAnswer(option)}
-                    className="px-5 py-3 rounded-full bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 hover:border-white/40 transition-all"
+                    className="px-5 py-3 rounded-full bg-white/10 border border-white/50 text-white font-medium hover:bg-white/20 hover:border-white/50 transition-all"
                   >
                     {option}
                   </button>
@@ -224,7 +221,7 @@ export default function HomePage() {
                 </Link>
                 <button
                   onClick={resetFinder}
-                  className="px-5 py-2.5 rounded-full border border-white/30 text-white font-medium text-sm hover:bg-white/10 transition-colors"
+                  className="px-5 py-2.5 rounded-full border border-white/50 text-white font-medium text-sm hover:bg-white/10 transition-colors"
                 >
                   Start again
                 </button>

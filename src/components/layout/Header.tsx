@@ -23,7 +23,7 @@ export function Header() {
       <div className="container-wide flex items-center justify-between h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/icons/tiny-dog-hub-logo.png" alt="Tiny Dog Hub" width={200} height={44} priority className="h-9 w-auto" />
+          <Image src="/icons/tiny-dog-hub-logo.png" alt="Tiny Dog Hub" width={240} height={52} priority className="h-11 w-auto" />
         </Link>
 
         {/* Desktop nav */}
