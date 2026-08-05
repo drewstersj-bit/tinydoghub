@@ -51,17 +51,16 @@ export default function HomePage() {
       {/* Hero — warm, inviting, illustration-style */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-cream via-white to-grey-100 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg" />
-        {/* Hero decorative image */}
-        <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
+        {/* Hero dog image — prominent */}
+        <div className="absolute right-0 top-0 bottom-0 w-2/3 lg:w-1/2">
           <Image
-            src="/images/tinydoghub_1410466767.webp"
-            alt=""
+            src="/images/tinydoghub_2119138752.webp"
+            alt="Small dogs photographed together"
             fill
-            className="object-cover object-center opacity-30"
+            className="object-cover object-center opacity-60 lg:opacity-70"
             priority
-            aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/80 to-transparent dark:from-dark-bg dark:via-dark-bg/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/70 to-transparent dark:from-dark-bg dark:via-dark-bg/70" />
         </div>
 
         <div className="relative container-wide py-20 lg:py-28">
