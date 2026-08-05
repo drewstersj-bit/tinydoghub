@@ -7,7 +7,7 @@
   --color-coral: #E84040;
   --color-coral-soft: #FF6B6B;
 
-  /* Light mode palette — high contrast, readable */
+  /* Light mode palette */
   --color-cream: #FFF9F4;
   --color-white: #FFFFFF;
   --color-grey-100: #F5F0EB;
@@ -27,13 +27,13 @@
   --color-sky: #4DA8E8;
   --color-fresh-green: #4E9B72;
 
-  /* Dark mode */
+  /* Dark mode tokens */
   --color-dark-bg: #121010;
   --color-dark-surface: #1C1818;
-  --color-dark-border: #2E2828;
+  --color-dark-border: #332D2D;
   --color-dark-text: #F0ECE8;
-  --color-dark-muted: #B0A8A0;
-  --color-dark-subtle: #807870;
+  --color-dark-muted: #B5ADA5;
+  --color-dark-subtle: #8A8078;
 
   --font-heading: var(--font-manrope), sans-serif;
   --font-body: var(--font-inter), sans-serif;
@@ -61,20 +61,43 @@
     line-height: 1.7;
   }
 
+  /* === DARK MODE GLOBAL OVERRIDES === */
   .dark body,
   .dark {
     background-color: var(--color-dark-bg);
     color: var(--color-dark-text);
   }
 
+  /* Headings: plum in light, cream-white in dark */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     color: var(--color-plum);
   }
-
   .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
     color: var(--color-dark-text);
   }
+
+  /* Force all text-ink elements to flip in dark mode */
+  .dark .text-ink { color: var(--color-dark-text) !important; }
+  .dark .text-ink-light { color: var(--color-dark-text) !important; }
+  .dark .text-ink-muted { color: var(--color-dark-muted) !important; }
+  .dark .text-plum { color: var(--color-coral-soft) !important; }
+  .dark .text-grey-500 { color: var(--color-dark-muted) !important; }
+  .dark .text-grey-700 { color: var(--color-dark-muted) !important; }
+
+  /* Cards and surfaces flip in dark mode */
+  .dark .bg-white { background-color: var(--color-dark-surface) !important; }
+  .dark .bg-cream { background-color: var(--color-dark-bg) !important; }
+  .dark .bg-grey-100 { background-color: var(--color-dark-surface) !important; }
+  .dark .border-grey-200 { border-color: var(--color-dark-border) !important; }
+
+  /* Hover states */
+  .dark .hover\:text-plum:hover { color: var(--color-coral-soft) !important; }
+  .dark .hover\:border-plum:hover { border-color: var(--color-coral-soft) !important; }
+  .dark .group:hover .group-hover\:text-plum { color: var(--color-coral-soft) !important; }
+
+  /* Links */
+  .dark a.text-plum { color: var(--color-coral-soft) !important; }
 }
 
 @utility container-narrow {
